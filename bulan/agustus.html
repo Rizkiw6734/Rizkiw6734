@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalender 2026</title>
+    <title>Artikel & Informasi</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
@@ -55,11 +55,38 @@
             display: none;
         }
 
-        @media(max-width: 768px) {
+        @media (max-width: 576px) {
+
             .header-toggle-btn {
-                display: block;
-            }
-        }
+        display: block;
+    }
+
+    /* Wrapper tombol bulan/menu lebih rapi dan simetris */
+    .row.g-4 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.2rem; /* Jarak antar tombol lebih rapi */
+        padding: 0 10px;
+    }
+
+    /* Setiap kolom tombol di HP berada di tengah */
+    .row.g-4 .col-6,
+    .row.g-4 .col-md-4,
+    .row.g-4 .col-lg-3 {
+        max-width: 80%;
+        flex: 0 0 80%; /* Tombol lebih lebar & proporsional */
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Ukuran tombol tetap konsisten */
+    .menu-btn {
+        width: 100%;
+        padding: 22px 10px; /* Tidak terlalu besar untuk layar kecil */
+        font-size: 1rem;
+    }
+}
 
         /* ===== SIDEBAR ===== */
         .sidebar {
@@ -70,7 +97,7 @@
             position: fixed;
             left: 0;
             top: 0;
-            padding-top: 90px; /* memberi ruang untuk header */
+            padding-top: 90px;
             transition: 0.3s ease;
             z-index: 900;
         }
@@ -83,11 +110,11 @@
             display: none !important;
         }
 
-        /* MOBILE */
         @media (max-width: 768px) {
             .sidebar {
                 left: -260px;
             }
+
             .sidebar.open {
                 left: 0;
             }
@@ -131,7 +158,7 @@
             width: 100%;
         }
 
-        .sidebar.collapsed ~ .content {
+        .sidebar.collapsed~.content {
             margin-left: 80px;
         }
 
@@ -142,8 +169,8 @@
             }
         }
 
-        /* ===== MONTH BUTTON ===== */
-        .month-btn {
+        /* ===== BUTTON STYLE (SAMA DENGAN BUTTON BULAN) ===== */
+        .menu-btn {
             background: #1a1d27;
             padding: 28px 15px;
             border-radius: 14px;
@@ -158,7 +185,7 @@
             color: inherit !important;
         }
 
-        .month-btn:hover {
+        .menu-btn:hover {
             background: #0d6efd;
             color: #fff;
             transform: translateY(-4px) scale(1.03);
@@ -169,7 +196,7 @@
 
 <body>
 
-    <!-- ========== TOP HEADER ========== -->
+    <!-- HEADER -->
     <div class="top-header">
         <span class="brand-title">YouthMedia</span>
         <button class="header-toggle-btn" id="headerToggle">
@@ -179,15 +206,11 @@
 
     <div class="wrapper">
 
-        <!-- ===== SIDEBAR ===== -->
+        <!-- SIDEBAR -->
         <nav id="sidebar" class="sidebar collapsed">
-            <a href="index.html">
+            <a href="../index.html">
                 <i class="bi bi-house-door me-2"></i>
                 <span class="link-text">Dashboard</span>
-            </a>
-            <a href="artikel.html">
-                <i class="bi bi-journal-text me-2"></i>
-                <span class="link-text">Artikel</span>
             </a>
             <a href="#">
                 <i class="bi bi-info-circle me-2"></i>
@@ -201,68 +224,95 @@
 
         <div class="overlay" id="overlay"></div>
 
-        <!-- ===== CONTENT ===== -->
-        <main class="content">
-            <h2 class="page-title">Kalender 2026</h2>
+        <!-- CONTENT -->
+<main class="content">
+    <!-- Tombol Kembali -->
+    <a href="../index.html" class="btn btn-outline-light mb-3">
+    <i class="bi bi-arrow-left"></i>
+</a>
 
-            <div class="row g-4">
-                <script>
-                    const months = [
-                        "Januari", "Februari", "Maret", "April", "Mei", "Juni",
-                        "Juli", "Agustus", "September", "Oktober", "November", "Desember"
-                    ];
 
-                    document.write(
-                        months.map((m, i) => `
-                            <div class="col-6 col-md-4 col-lg-3">
-                                <a class="month-btn" href="bulan_${i + 1}.html">${m}</a>
-                            </div>
-                        `).join('')
-                    );
-                </script>
-            </div>
-        </main>
+    <h2 class="page-title" id="monthTitle">Bulan</h2>
+
+<script>
+    const monthNames = {
+        "januari.html": "Januari",
+        "februari.html": "Februari",
+        "maret.html": "Maret",
+        "april.html": "April",
+        "mei.html": "Mei",
+        "juni.html": "Juni",
+        "juli.html": "Juli",
+        "agustus.html": "Agustus",
+        "september.html": "September",
+        "oktober.html": "Oktober",
+        "november.html": "November",
+        "desember.html": "Desember"
+    };
+
+    // Ambil nama file
+    const currentPage = location.pathname.split("/").pop();
+
+    // Ganti judul
+    document.getElementById("monthTitle").textContent =
+        monthNames[currentPage] || "Bulan";
+</script>
+
+
+    
+
+    <div class="row g-4">
+
+        <div class="col-6 col-md-4 col-lg-3">
+            <a class="menu-btn" href="artikel.html">Artikel</a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+            <a class="menu-btn" href="informasi.html">Informasi</a>
+        </div>
+
+        <!-- Tombol Travel Picks -->
+        <div class="col-6 col-md-4 col-lg-3">
+            <a class="menu-btn" href="travel.html">Travel Picks</a>
+        </div>
+
+    </div>
+</main>
+
     </div>
 
-    <!-- JS -->
-   <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const sidebar = document.getElementById("sidebar");
-    const overlay = document.getElementById("overlay");
-    const headerToggle = document.getElementById("headerToggle");
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sidebar = document.getElementById("sidebar");
+            const overlay = document.getElementById("overlay");
+            const headerToggle = document.getElementById("headerToggle");
 
-    /* ===== TOGGLE SIDEBAR ===== */
-    headerToggle.addEventListener("click", () => {
-        if (window.innerWidth <= 768) {
-            sidebar.classList.toggle("open");
-            overlay.classList.toggle("active");
-        } else {
-            sidebar.classList.toggle("collapsed");
-        }
-    });
+            headerToggle.addEventListener("click", () => {
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.toggle("open");
+                    overlay.classList.toggle("active");
+                } else {
+                    sidebar.classList.toggle("collapsed");
+                }
+            });
 
-    /* ===== OVERLAY CLOSE ===== */
-    overlay.addEventListener("click", () => {
-        sidebar.classList.remove("open");
-        overlay.classList.remove("active");
-    });
+            overlay.addEventListener("click", () => {
+                sidebar.classList.remove("open");
+                overlay.classList.remove("active");
+            });
 
-    /* ===== AUTO ACTIVE PAGE ===== */
-    const currentPage = location.pathname.split("/").pop(); 
-    const menuLinks = document.querySelectorAll(".sidebar a");
+            const currentPage = location.pathname.split("/").pop();
+            const menuLinks = document.querySelectorAll(".sidebar a");
 
-    menuLinks.forEach(link => {
-        const linkPage = link.getAttribute("href");
+            menuLinks.forEach(link => {
+                const linkPage = link.getAttribute("href");
 
-        // Jika href sama dengan nama file yg sedang dibuka
-        if (linkPage === currentPage) {
-            link.classList.add("active");
-        } else {
-            link.classList.remove("active");
-        }
-    });
-});
-</script>
+                if (linkPage === currentPage) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
 
 </body>
 
