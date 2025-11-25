@@ -52,12 +52,26 @@
             background: transparent;
             font-size: 1.7rem;
             color: #e5e5e5;
-            display: none;
+        }
+
+        #themeToggle {
+            margin-left: auto !important;
+            /* dorong ke kanan */
+            margin-right: 10px !important;
+            /* mepet sisi kanan */
+            font-size: 1.4rem;
         }
 
         @media(max-width: 768px) {
             .header-toggle-btn {
                 display: block;
+            }
+
+            #themeToggle {
+                margin-left: auto !important;
+                /* Dorong icon ke kanan */
+                margin-right: 10px !important;
+                /* Mepet sisi kanan */
             }
         }
 
@@ -75,40 +89,86 @@
             z-index: 900;
         }
 
-        .sidebar.collapsed {
-            width: 80px;
-        }
-
-        .sidebar.collapsed .link-text {
-            display: none !important;
-        }
-
-        @media (max-width: 768px) {
-            .sidebar {
-                left: -260px;
+        /* COLLAPSED MODE (DESKTOP) */
+        @media(min-width: 769px) {
+            .sidebar.collapsed {
+                width: 80px;
             }
 
+            .sidebar.collapsed .link-text {
+                display: none !important;
+            }
+        }
+
+
+        /* ==== MOBILE MODE ==== */
+        @media (max-width: 768px) {
+
+            /* Sidebar tertutup */
+            .sidebar {
+                left: -260px;
+                width: 250px !important;
+                /* selalu full di mobile */
+            }
+
+            /* Sidebar terbuka */
             .sidebar.open {
                 left: 0;
             }
+
+            /* Pastikan link-text SELALU tampil */
+            .sidebar .link-text {
+                display: inline !important;
+            }
+
+            .sidebar a {
+                padding: 14px 22px;
+            }
         }
 
-        .sidebar a {
-            color: #bfc2d4;
-            padding: 12px 20px;
-            display: block;
-            border-radius: 6px;
-            margin: 4px 10px;
+        /* Styling link text */
+        .sidebar .link-text {
+            font-size: 1rem;
             font-weight: 500;
+            margin-left: 6px;
+            opacity: 0.9;
+        }
+
+        .sidebar a:hover .link-text {
+            opacity: 1;
+        }
+
+        /* TEKS MENU */
+        .sidebar a {
+            color: #d7d9e4;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-radius: 10px;
+            margin: 6px 12px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            background: transparent;
+            text-decoration: none !important;
+            /* hilangkan gaya link */
             transition: 0.25s ease;
+        }
+
+        /* Ikon */
+        .sidebar a i {
+            font-size: 1.2rem;
+            opacity: 0.9;
         }
 
         .sidebar a:hover,
         .sidebar .active {
-            background: rgba(0, 119, 255, 0.2);
+            background: rgba(0, 110, 255, 0.25);
             border-left: 4px solid #0d6efd;
-            color: #fff !important;
+            color: #ffffff !important;
+            transform: translateX(3px);
         }
+
 
         /* OVERLAY */
         .overlay {
@@ -164,7 +224,84 @@
             object-fit: cover;
             border-radius: 50%;
             border: 4px solid #272a38;
-            box-shadow: 0 6px 18px rgba(0,0,0,.35);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+        }
+
+        /* ===== LIGHT MODE ===== */
+        .light-mode body {
+            background: #f4f4f8;
+            color: #2b2b2b;
+        }
+
+        .light-mode .top-header {
+            background: #ffffff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Brand title tetap biru */
+        .light-mode .brand-title {
+            color: #0d6efd;
+        }
+
+        /* ==== FIX UNTUK TOMBOL ==== */
+
+        /* Tombol toggle tema */
+        .light-mode #themeToggle {
+            background: #e8e8e8;
+            color: #222 !important;
+        }
+
+        /* Ikon di dalam tombol tema */
+        .light-mode #themeToggle i {
+            color: #222 !important;
+        }
+
+        /* Tombol menu/sidebar toggle */
+        .light-mode .header-toggle-btn {
+            color: #222 !important;
+            background: transparent;
+        }
+
+        /* Hover untuk kedua tombol di light mode */
+        .light-mode #themeToggle:hover,
+        .light-mode .header-toggle-btn:hover {
+            background: #f0f0f0;
+        }
+
+        /* ==== SIDEBAR ==== */
+        .light-mode .sidebar {
+            background: #ffffff;
+            border-right: 1px solid #ddd;
+        }
+
+        .light-mode .sidebar a {
+            color: #333;
+            border-radius: 6px;
+        }
+
+        .light-mode .sidebar a:hover,
+        .light-mode .sidebar .active {
+            background: rgba(13, 110, 253, 0.15);
+            color: #0d6efd !important;
+            border-left: 4px solid #0d6efd;
+        }
+
+        /* ==== MONTH BUTTON ==== */
+        .light-mode .month-btn {
+            background: #ffffff;
+            color: #2b2b2b;
+            border: 1px solid #cfcfe0;
+        }
+
+        .light-mode .month-btn:hover {
+            background: #0d6efd;
+            color: #ffffff !important;
+            box-shadow: 0 8px 20px rgba(13, 110, 253, 0.45);
+        }
+
+        /* ==== CONTENT ==== */
+        .light-mode .content {
+            color: #222;
         }
     </style>
 </head>
@@ -174,6 +311,11 @@
     <!-- HEADER -->
     <div class="top-header">
         <span class="brand-title">YouthMedia</span>
+
+        <button id="themeToggle" class="btn btn-sm text-light">
+            <i class="bi bi-sun-fill"></i>
+        </button>
+
         <button class="header-toggle-btn" id="headerToggle">
             <i class="bi bi-list"></i>
         </button>
@@ -193,7 +335,7 @@
                 <span class="link-text">Tentang</span>
             </a>
 
-            <a href="#">
+            <a href="piala/pildun.html">
                 <i class="bi bi-trophy me-2"></i>
                 <span class="link-text">Piala Dunia</span>
             </a>
@@ -209,9 +351,12 @@
             <h2 class="fw-bold">YouthMedia</h2>
 
             <p class="mt-3 mb-4" style="max-width: 550px; margin:auto; line-height:1.7;">
-                Website ini dibuat sebagai pelengkap dari kalender fisik, dengan menyediakan informasi tambahan seperti penjelasan hari-hari besar nasional dan internasional, 
-                pembaruan terbaru bila ada libur tambahan atau pengumuman resmi dari pemerintah, serta rekomendasi waktu terbaik untuk mengunjungi berbagai negara di setiap bulan. 
-                Selain itu, website ini juga dilengkapi dengan satu fitur khusus yang menampilkan jadwal Piala Dunia yang akan berlangsung pada Juni 2026.
+                Website ini dibuat sebagai pelengkap dari kalender fisik, dengan menyediakan informasi tambahan seperti
+                penjelasan hari-hari besar nasional dan internasional,
+                pembaruan terbaru bila ada libur tambahan atau pengumuman resmi dari pemerintah, serta rekomendasi waktu
+                terbaik untuk mengunjungi berbagai negara di setiap bulan.
+                Selain itu, website ini juga dilengkapi dengan satu fitur khusus yang menampilkan jadwal Piala Dunia
+                yang akan berlangsung pada Juni 2026.
             </p>
 
             <h4 class="mt-5 mb-3">Hubungi Kami</h4>
@@ -222,7 +367,8 @@
                     <i class="bi bi-whatsapp"></i> WhatsApp
                 </a>
 
-                <a href="https://www.instagram.com/youthmedia.visual?igsh=MW9lbmUzM3RkOHR0bg==" class="social-btn w-100">
+                <a href="https://www.instagram.com/youthmedia.visual?igsh=MW9lbmUzM3RkOHR0bg=="
+                    class="social-btn w-100">
                     <i class="bi bi-instagram"></i> Instagram
                 </a>
 
@@ -241,6 +387,7 @@
             const overlay = document.getElementById("overlay");
             const headerToggle = document.getElementById("headerToggle");
 
+            /* ===== TOGGLE SIDEBAR ===== */
             headerToggle.addEventListener("click", () => {
                 if (window.innerWidth <= 768) {
                     sidebar.classList.toggle("open");
@@ -250,10 +397,50 @@
                 }
             });
 
+            /* ===== OVERLAY CLOSE ===== */
             overlay.addEventListener("click", () => {
                 sidebar.classList.remove("open");
                 overlay.classList.remove("active");
             });
+
+            /* ===== AUTO ACTIVE PAGE ===== */
+            const currentPage = location.pathname.split("/").pop();
+            const menuLinks = document.querySelectorAll(".sidebar a");
+
+            menuLinks.forEach(link => {
+                const linkPage = link.getAttribute("href");
+
+                // Jika href sama dengan nama file yg sedang dibuka
+                if (linkPage === currentPage) {
+                    link.classList.add("active");
+                } else {
+                    link.classList.remove("active");
+                }
+            });
+        });
+
+        const themeToggle = document.getElementById("themeToggle");
+        const themeIcon = themeToggle.querySelector("i");
+
+        /* ===== LOAD THEME FROM LOCAL STORAGE ===== */
+        if (localStorage.getItem("theme") === "light") {
+            document.documentElement.classList.add("light-mode");
+            themeIcon.classList.replace("bi-sun-fill", "bi-moon-fill");
+        } else {
+            themeIcon.classList.add("bi-sun-fill");
+        }
+
+        /* ===== TOGGLE THEME ===== */
+        themeToggle.addEventListener("click", () => {
+            document.documentElement.classList.toggle("light-mode");
+
+            if (document.documentElement.classList.contains("light-mode")) {
+                themeIcon.classList.replace("bi-sun-fill", "bi-moon-fill");
+                localStorage.setItem("theme", "light");
+            } else {
+                themeIcon.classList.replace("bi-moon-fill", "bi-sun-fill");
+                localStorage.setItem("theme", "dark");
+            }
         });
     </script>
 
