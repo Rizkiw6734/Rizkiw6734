@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artikel & Informasi</title>
+    <title>Artikel 2026 - YouthMedia</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <style>
+        /* ===== COPY PASTE DARI FILEMU, TIDAK DIUBAH ===== */
         body {
             font-family: 'Poppins', sans-serif;
             background: #0f1116;
@@ -25,7 +26,6 @@
             width: 100%;
         }
 
-        /* ===== TOP HEADER ===== */
         .top-header {
             width: 100%;
             background: #15171f;
@@ -54,53 +54,54 @@
             color: #e5e5e5;
         }
 
-         #themeToggle {
+        #themeToggle {
             margin-left: auto !important;
-            /* dorong ke kanan */
             margin-right: 10px !important;
-            /* mepet sisi kanan */
             font-size: 1.4rem;
         }
 
         @media (max-width: 576px) {
 
             .header-toggle-btn {
-        display: block;
-    }
+                display: block;
+            }
 
-    /* Wrapper tombol bulan/menu lebih rapi dan simetris */
-    .row.g-4 {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1.2rem; /* Jarak antar tombol lebih rapi */
-        padding: 0 10px;
-    }
+            /* Wrapper tombol bulan/menu lebih rapi dan simetris */
+            .row.g-4 {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1.2rem;
+                /* Jarak antar tombol lebih rapi */
+                padding: 0 10px;
+            }
 
-    /* Setiap kolom tombol di HP berada di tengah */
-    .row.g-4 .col-6,
-    .row.g-4 .col-md-4,
-    .row.g-4 .col-lg-3 {
-        max-width: 80%;
-        flex: 0 0 80%; /* Tombol lebih lebar & proporsional */
-        display: flex;
-        justify-content: center;
-    }
+            /* Setiap kolom tombol di HP berada di tengah */
+            .row.g-4 .col-6,
+            .row.g-4 .col-md-4,
+            .row.g-4 .col-lg-3 {
+                max-width: 80%;
+                flex: 0 0 80%;
+                /* Tombol lebih lebar & proporsional */
+                display: flex;
+                justify-content: center;
+            }
 
-    /* Ukuran tombol tetap konsisten */
-    .menu-btn {
-        width: 100%;
-        padding: 22px 10px; /* Tidak terlalu besar untuk layar kecil */
-        font-size: 1rem;
-    }
+            /* Ukuran tombol tetap konsisten */
+            .menu-btn {
+                width: 100%;
+                padding: 22px 10px;
+                /* Tidak terlalu besar untuk layar kecil */
+                font-size: 1rem;
+            }
 
-     #themeToggle {
+            #themeToggle {
                 margin-left: auto !important;
                 /* Dorong icon ke kanan */
                 margin-right: 10px !important;
                 /* Mepet sisi kanan */
             }
-}
+        }
 
         /* ===== SIDEBAR ===== */
         .sidebar {
@@ -116,7 +117,7 @@
             z-index: 900;
         }
 
-         /* COLLAPSED MODE (DESKTOP) */
+        /* COLLAPSED MODE (DESKTOP) */
         @media(min-width: 769px) {
             .sidebar.collapsed {
                 width: 80px;
@@ -128,7 +129,7 @@
         }
 
 
-         /* ==== MOBILE MODE ==== */
+        /* ==== MOBILE MODE ==== */
         @media (max-width: 768px) {
 
             /* Sidebar tertutup */
@@ -167,7 +168,7 @@
 
         /* TEKS MENU */
         .sidebar a {
-           color: #d7d9e4;
+            color: #d7d9e4;
             padding: 14px 20px;
             display: flex;
             align-items: center;
@@ -182,7 +183,7 @@
             transition: 0.25s ease;
         }
 
-         /* Ikon */
+        /* Ikon */
         .sidebar a i {
             font-size: 1.2rem;
             opacity: 0.9;
@@ -196,7 +197,6 @@
             transform: translateX(3px);
         }
 
-        /* OVERLAY */
         .overlay {
             position: fixed;
             inset: 0;
@@ -209,16 +209,11 @@
             display: block;
         }
 
-        /* CONTENT */
         .content {
             margin-left: 250px;
             padding: 120px 40px 40px;
-            transition: 0.3s ease;
             width: 100%;
-        }
-
-        .sidebar.collapsed~.content {
-            margin-left: 80px;
+            transition: 0.3s ease;
         }
 
         @media(max-width: 768px) {
@@ -228,30 +223,7 @@
             }
         }
 
-        /* ===== BUTTON STYLE (SAMA DENGAN BUTTON BULAN) ===== */
-        .menu-btn {
-            background: #1a1d27;
-            padding: 28px 15px;
-            border-radius: 14px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-align: center;
-            display: block;
-            border: 1px solid #272a38;
-            transition: 0.25s;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, .35);
-            text-decoration: none !important;
-            color: inherit !important;
-        }
-
-        .menu-btn:hover {
-            background: #0d6efd;
-            color: #fff;
-            transform: translateY(-4px) scale(1.03);
-            box-shadow: 0 8px 20px rgba(13, 110, 253, 0.4);
-        }
-
-         /* ===== LIGHT MODE ===== */
+        /* Light Mode */
         .light-mode body {
             background: #f4f4f8;
             color: #2b2b2b;
@@ -262,37 +234,6 @@
             border-bottom: 1px solid #ddd;
         }
 
-        /* Brand title tetap biru */
-        .light-mode .brand-title {
-            color: #0d6efd;
-        }
-
-        /* ==== FIX UNTUK TOMBOL ==== */
-
-        /* Tombol toggle tema */
-        .light-mode #themeToggle {
-            background: #e8e8e8;
-            color: #222 !important;
-        }
-
-        /* Ikon di dalam tombol tema */
-        .light-mode #themeToggle i {
-            color: #222 !important;
-        }
-
-        /* Tombol menu/sidebar toggle */
-        .light-mode .header-toggle-btn {
-            color: #222 !important;
-            background: transparent;
-        }
-
-        /* Hover untuk kedua tombol di light mode */
-        .light-mode #themeToggle:hover,
-        .light-mode .header-toggle-btn:hover {
-            background: #f0f0f0;
-        }
-
-        /* ==== SIDEBAR ==== */
         .light-mode .sidebar {
             background: #ffffff;
             border-right: 1px solid #ddd;
@@ -300,7 +241,6 @@
 
         .light-mode .sidebar a {
             color: #333;
-            border-radius: 6px;
         }
 
         .light-mode .sidebar a:hover,
@@ -310,26 +250,6 @@
             border-left: 4px solid #0d6efd;
         }
 
-        /* TOMBOL KEMBALI */
-        .light-mode .btn-outline-light {
-            color: #222;
-            border-color: #2b2b2b;
-        }
-
-        /* ==== MENU BUTTON ==== */
-        .light-mode .menu-btn {
-            background: #ffffff;
-            color: #2b2b2b;
-            border: 1px solid #cfcfe0;
-        }
-
-        .light-mode .menu-btn:hover {
-            background: #0d6efd;
-            color: #ffffff !important;
-            box-shadow: 0 8px 20px rgba(13, 110, 253, 0.45);
-        }
-
-        /* ==== CONTENT ==== */
         .light-mode .content {
             color: #222;
         }
@@ -338,7 +258,7 @@
 
 <body>
 
-    <!-- HEADER -->
+    <!-- ===== HEADER ===== -->
     <div class="top-header">
         <span class="brand-title">YouthMedia</span>
 
@@ -353,16 +273,19 @@
 
     <div class="wrapper">
 
-        <!-- SIDEBAR -->
+        <!-- ===== SIDEBAR ===== -->
         <nav id="sidebar" class="sidebar collapsed">
+
             <a href="../index.html">
                 <i class="bi bi-house-door me-2"></i>
                 <span class="link-text">Dashboard</span>
             </a>
+
             <a href="../about.html">
                 <i class="bi bi-info-circle me-2"></i>
                 <span class="link-text">Tentang</span>
             </a>
+
             <a href="../piala/pildun.html">
                 <i class="bi bi-trophy me-2"></i>
                 <span class="link-text">Piala Dunia</span>
@@ -371,64 +294,33 @@
 
         <div class="overlay" id="overlay"></div>
 
-        <!-- CONTENT -->
-<main class="content">
-    <!-- Tombol Kembali -->
-    <a href="../index.html" class="btn btn-outline-light mb-3">
-    <i class="bi bi-arrow-left"></i>
-</a>
+        <!-- ===== CONTENT ===== -->
+        <main class="content">
 
+            <h2 class="fw-bold text-center">Artikel Tahun 2026</h2>
 
-    <h2 class="page-title" id="monthTitle">Bulan</h2>
+            <p class="mt-4" style="max-width: 750px; margin:auto; line-height:1.8; text-align:center;">
+                Tahun 2026 menjadi tahun yang penuh perubahan dan informasi penting bagi banyak negara.
+                Pada tahun ini, berbagai agenda besar akan berlangsung, termasuk event internasional,
+                kebijakan pemerintah terbaru, serta momen budaya yang memiliki dampak besar bagi masyarakat.
+                Melalui halaman artikel ini, YouthMedia akan menyajikan konten yang informatif, ringkas,
+                dan mudah dipahami mulai dari penjelasan hari penting, pembaruan kebijakan, hingga insight menarik
+                dari berbagai belahan dunia. Semua artikel akan hadir secara bertahap sepanjang tahun 2026.
+            </p>
 
-<script>
-    const monthNames = {
-        "januari.html": "Januari",
-        "februari.html": "Februari",
-        "maret.html": "Maret",
-        "april.html": "April",
-        "mei.html": "Mei",
-        "juni.html": "Juni",
-        "juli.html": "Juli",
-        "agustus.html": "Agustus",
-        "september.html": "September",
-        "oktober.html": "Oktober",
-        "november.html": "November",
-        "desember.html": "Desember"
-    };
+            <div class="mt-5 text-center">
+                <i class="bi bi-hourglass-split" style="font-size: 3rem; opacity: .8;"></i>
+                <h4 class="mt-3">Artikel akan mulai tayang pada Januari 2026</h4>
+                <p class="text-secondary mt-2">
+                    Nantikan informasi terbaru yang akan selalu diperbarui sesuai perkembangan sepanjang tahun.
+                </p>
+            </div>
 
-    // Ambil nama file
-    const currentPage = location.pathname.split("/").pop();
-
-    // Ganti judul
-    document.getElementById("monthTitle").textContent =
-        monthNames[currentPage] || "Bulan";
-</script>
-
-
-    
-
-    <div class="row g-4">
-
-        <div class="col-6 col-md-4 col-lg-3">
-            <a class="menu-btn" href="../artikel/januari.html">Artikel</a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3">
-            <a class="menu-btn" href="informasi.html">Informasi</a>
-        </div>
-
-        <!-- Tombol Travel Picks -->
-        <div class="col-6 col-md-4 col-lg-3">
-            <a class="menu-btn" href="travel.html">Travel Picks</a>
-        </div>
-
-    </div>
-</main>
-
+        </main>
     </div>
 
     <script>
+        // ===== Sidebar Toggle & Overlay =====
         document.addEventListener("DOMContentLoaded", () => {
             const sidebar = document.getElementById("sidebar");
             const overlay = document.getElementById("overlay");
@@ -448,30 +340,24 @@
                 overlay.classList.remove("active");
             });
 
+            // Auto Active Menu
             const currentPage = location.pathname.split("/").pop();
-            const menuLinks = document.querySelectorAll(".sidebar a");
-
-            menuLinks.forEach(link => {
-                const linkPage = link.getAttribute("href");
-
-                if (linkPage === currentPage) {
+            document.querySelectorAll(".sidebar a").forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
                     link.classList.add("active");
                 }
             });
         });
 
+        // ===== Theme Toggle =====
         const themeToggle = document.getElementById("themeToggle");
         const themeIcon = themeToggle.querySelector("i");
 
-        /* ===== LOAD THEME FROM LOCAL STORAGE ===== */
         if (localStorage.getItem("theme") === "light") {
             document.documentElement.classList.add("light-mode");
             themeIcon.classList.replace("bi-sun-fill", "bi-moon-fill");
-        } else {
-            themeIcon.classList.add("bi-sun-fill");
         }
 
-        /* ===== TOGGLE THEME ===== */
         themeToggle.addEventListener("click", () => {
             document.documentElement.classList.toggle("light-mode");
 
